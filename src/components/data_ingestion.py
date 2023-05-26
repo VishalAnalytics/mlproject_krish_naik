@@ -11,12 +11,13 @@ from dataclasses import dataclass
 @dataclass
 class DataIngestionConfig:
     # These are the input which we are given to Data Ingestion Configs, where they need to save data
-    train_data_path: str = os.path.join("articfacts ", "train.csv")
-    test_data_path: str = os.path.join("articfacts ", "test.csv")
-    raw_data_path: str = os.path.join("articfacts ", "data.csv")
+    train_data_path: str = os.path.join('articfacts', "train.csv")
+    test_data_path: str = os.path.join('articfacts', "test.csv")
+    raw_data_path: str = os.path.join('articfacts', "data.csv")
 
 class DataIngestion:
     def __init__(self):
+        # As soon as we call above DataIngestion Class, above mentioned three variable train_data_path, test_data_path, raw_data_path, will get save into self.ingestion_config. 
         self.ingestion_config = DataIngestionConfig()
         
     def initiate_data_ingestion(self):
@@ -25,7 +26,7 @@ class DataIngestion:
         try:
             
             # Getting data into dataframe
-            df=pd.read_csv('D:\mlproject_krish_naik\notebook\data\stud.csv')
+            df=pd.read_csv('notebook\data\stud.csv')
             logging.info('Read the dataset as dataframe')
             
             # We already know the path of training data, test data and raw data. My path would be artifact/train.csv. So, we will be creating folders.
