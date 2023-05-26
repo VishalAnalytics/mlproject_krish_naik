@@ -30,11 +30,12 @@ class DataIngestion:
             logging.info('Read the dataset as dataframe')
             
             # We already know the path of training data, test data and raw data. My path would be artifact/train.csv. So, we will be creating folders.
-            
+            # Below we will be creating folders like artifacts/train.csv, artifacts/test.csv, artifacts/data.csv
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True )
             
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
             
+            # Now we will be spliting our data into train and test.
             logging.info('Train Test Split initiated')
             train_set, test_set = train_test_split(df,test_size=0.2, random_state=42 )
             
