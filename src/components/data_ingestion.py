@@ -11,9 +11,9 @@ from src.components.data_transformation import DataTransformation, DataTransform
 @dataclass
 class DataIngestionConfig:
     # These are the input which we are given to Data Ingestion Configs, where they need to save data
-    train_data_path: str = os.path.join('articfacts', "train.csv")
-    test_data_path: str = os.path.join('articfacts', "test.csv")
-    raw_data_path: str = os.path.join('articfacts', "data.csv")
+    train_data_path: str = os.path.join('artifacts', "train.csv")
+    test_data_path: str = os.path.join('artifacts', "test.csv")
+    raw_data_path: str = os.path.join('artifacts', "data.csv")
 
 class DataIngestion:
     def __init__(self):
@@ -58,3 +58,5 @@ if __name__ == "__main__":
     
     data_transformation=DataTransformation()
     data_transformation.initiate_data_transformation(train_data,test_data)
+    
+    
